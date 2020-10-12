@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ProductTwoCreate;
+use App\Http\Requests\ProductTwoEdit;
 use App\Model\Category;
 use App\Model\Color;
 use App\Model\Product;
@@ -54,7 +56,7 @@ class ProductTwoController extends Controller
         return view('admin.products_two.create', compact('categories'));
     }
 
-    public function productStore(ProductCreate $request)
+    public function productStore(ProductTwoCreate $request)
     {
         $colors = $request->colors;
         $sizes = $request->sizes;
@@ -84,7 +86,7 @@ class ProductTwoController extends Controller
         return view('admin.products_two.edit', compact('model', 'categories', 'sizes_array', 'colors_array'));
     }
 
-    public function productUpdate(Request $request, $id)
+    public function productUpdate(ProductTwoEdit $request, $id)
     {
         $request['product_id'] = $id;
 
