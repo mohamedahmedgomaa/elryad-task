@@ -10,8 +10,8 @@ class ProductItem extends Model
     public $timestamps = true;
     protected $fillable = array('key', 'value', 'product_id');
 
-    public function product()
+    public function productTwo()
     {
-        return $this->belongsTo('App\Model\Product', 'product_id', 'id');
+        return $this->belongsTo('App\Model\ProductTwo', 'product_id', 'id');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\DataTables\Admin;
 
 use App\Model\Product;
+use App\Model\ProductTwo;
 use Yajra\DataTables\Services\DataTable;
 
 class ProductTwoDatatable extends DataTable
@@ -36,7 +37,7 @@ class ProductTwoDatatable extends DataTable
      */
     public function query()
     {
-        return Product::query()->with('category')->select('products.*')->latest();
+        return ProductTwo::query()->with('category')->select('product_twos.*')->latest();
     }
 
     /**

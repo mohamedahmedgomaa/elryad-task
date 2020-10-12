@@ -9,6 +9,7 @@ use App\DataTables\Admin\ProductTwoDatatable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductCreate;
 use App\Model\ProductItem;
+use App\Model\ProductTwo;
 use App\Model\Size;
 use App\Traits\ProductTrait;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class ProductTwoController extends Controller
 
     public function productShow($id)
     {
-        $product = Product::find($id);
+        $product = ProductTwo::find($id);
         if ($product) {
             $product_item_sizes = ProductItem::where('product_id', $product->id)->where('key', 'size')->first();
             $sizes_array = explode(',', $product_item_sizes->value);
@@ -70,7 +71,7 @@ class ProductTwoController extends Controller
 
     public function productEdit($id)
     {
-        $model = Product::find($id);
+        $model = ProductTwo::find($id);
 
         $product_item_sizes = ProductItem::where('product_id', $model->id)->where('key', 'size')->first();
         $sizes_array = explode(',', $product_item_sizes->value);
@@ -106,12 +107,12 @@ class ProductTwoController extends Controller
 
     public function productDelete($id)
     {
-        $delete = Product::where('id', $id)->delete();
+        $delete = ProductTwo::where('id', $id)->delete();
 
         // check data deleted or not
         if ($delete == 1) {
             $success = true;
-            $message = trans('company.delete_success');
+            $message = 'تم الحزف بنجاح';
         } else {
             $success = true;
             $message = trans('company.delete_error');

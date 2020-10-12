@@ -6,6 +6,7 @@ use App\Model\ColorProduct;
 use App\Model\ProductItem;
 use App\Model\ProductSize;
 use App\Model\Product;
+use App\Model\ProductTwo;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
@@ -74,7 +75,7 @@ trait ProductTrait
     public function createNewProductTwo($request)
     {
         DB::beginTransaction();
-        $product = new Product();
+        $product = new ProductTwo();
         $product->name = $request['name'];
         $product->description = $request['description'];
         $product->price = $request['price'];
@@ -114,7 +115,7 @@ trait ProductTrait
     public function editProductTwo($request)
     {
         DB::beginTransaction();
-        $product = Product::find($request['product_id']);
+        $product = ProductTwo::find($request['product_id']);
 
         $product->name = $request['name'];
         $product->description = $request['description'];

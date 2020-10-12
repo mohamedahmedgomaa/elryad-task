@@ -92,7 +92,7 @@ class ProductController extends Controller
         // check data deleted or not
         if ($delete == 1) {
             $success = true;
-            $message = trans('company.delete_success');
+            $message = 'تم الحزف بنجاح';
         } else {
             $success = true;
             $message = trans('company.delete_error');
