@@ -24,4 +24,15 @@
         </ul>
     </li>
 
+    <li class="treeview {{ active_menu('products_two')[0] }}">
+        <a href="#">
+            <i class="fa fa-list"></i> <span>المنتجات بالطريقه التانيه</span>
+            <span class="pull-right-container"></span>
+        </a>
+        <ul class="treeview-menu" style="{{ active_menu('products_two')[1] }}">
+            <li class=""><a href="{{ url('admin/products_two') }}"><i class="fa fa-list"></i>المنتجات بالطريقه التانيه</a></li>
+            <li class=""><a href="{{ url(route('admin.products_two.create')) }}"><i class="fa fa-plus"></i>{{ trans('admin.add') }}</a></li>
+        </ul>
+    </li>
+
 </ul>

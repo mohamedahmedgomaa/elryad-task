@@ -42,6 +42,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
         });
 
+        Route::group(['prefix' => 'products_two'], function () {
+
+            Route::get('/', 'ProductTwoController@products')->name('admin.products_two');
+            Route::get('show/{id}', 'ProductTwoController@productShow')->name('admin.products_two.show');
+            Route::get('create', 'ProductTwoController@productCreate')->name('admin.products_two.create');
+            Route::post('create', 'ProductTwoController@productStore')->name('admin.products_two.store');
+            Route::get('edit/{id}', 'ProductTwoController@productEdit')->name('admin.products_two.edit');
+            Route::post('edit/{id}', 'ProductTwoController@productUpdate')->name('admin.products_two.editPost');
+            Route::post('delete/{id}', 'ProductTwoController@productDelete')->name('admin.products_two.delete');
+
+        });
+
     });
 });
 

@@ -5,7 +5,7 @@ namespace App\DataTables\Admin;
 use App\Model\Product;
 use Yajra\DataTables\Services\DataTable;
 
-class ProductDatatable extends DataTable
+class ProductTwoDatatable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,8 +20,8 @@ class ProductDatatable extends DataTable
             ->editColumn('created_at', function ($contact){
                 return date('d/m/Y H:i:s', strtotime($contact->created_at) );
             })
-            ->addColumn('show', 'admin.products.btn.show')
-            ->addColumn('action', 'admin.products.btn.action')
+            ->addColumn('show', 'admin.products_two.btn.show')
+            ->addColumn('action', 'admin.products_two.btn.action')
             ->rawColumns([
                 'action',
                 'show',

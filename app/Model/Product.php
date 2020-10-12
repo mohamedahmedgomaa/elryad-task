@@ -26,4 +26,9 @@ class Product extends Model
         return $this->belongsToMany('App\Model\Size');
     }
 
+    public function productItems()
+    {
+        return $this->hasMany('App\Model\ProductItem', 'product_id', 'id');
+    }
+
 }
